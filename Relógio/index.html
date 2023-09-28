@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Site</title>
+    <style>
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        .header {
+            background-color: #E4252a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .content {
+            margin: 15px;
+        }
+        #clock {
+            font-size: 450px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            display: block;
+            margin: auto;
+        }
+        .footer {
+            background-color: #E4252a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Dedicação total a você!</h1>
+    </div>
+    <div class="content">
+        Mateus 5:10 NTLH
+— Felizes as pessoas que sofrem perseguições por fazerem a vontade de Deus, pois o Reino do Céu é delas.
+        <div id="clock"></div>
+        <img src="https://media.licdn.com/dms/image/D4D16AQEUrOQYpVKAGQ/profile-displaybackgroundimage-shrink_200_800/0/1695223360069?e=2147483647&v=beta&t=wgRkgxdFUIz_bJT3EAZA69F3XdDnsnMMBmWn_FM76e4" alt="Imagem">
+    </div>
+
+    <div class="footer">
+        © Fabricio Porto Rocha
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
